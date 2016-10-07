@@ -58,7 +58,7 @@ def db_access_point(func):
             resp = func(self, session, *args, **kwargs)
         except Exception as exc:
             self.session_handler.handle_session(session, exc=exc)
-            raise exc
+            raise
         else:
             self.session_handler.handle_session(session)
             return resp
