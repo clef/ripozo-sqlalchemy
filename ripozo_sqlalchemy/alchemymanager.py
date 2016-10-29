@@ -325,7 +325,7 @@ class AlchemyManager(BaseManager):
         :return: The model with the updated
         :rtype: Model
         """
-        fields = fields or self.fields
+        fields = fields or []
         for name, val in six.iteritems(values):
             if name not in fields:
                 continue
